@@ -1,7 +1,7 @@
 Math.swap = (a, i, j) => [a[i], a[j]] = [a[j], a[i]]
 
 Math.gcd = (...a) => {
-    const _gcd = (x, y) => {
+    let _gcd = (x, y) => {
         if (y === 0) return x
         return _gcd(y, x % y)
     }
@@ -10,8 +10,7 @@ Math.gcd = (...a) => {
 }
 
 Math.arrayLowerBound = (a, x) => {
-    let lo = 0,
-        hi = a.length - 1
+    let lo = 0, hi = a.length - 1
     while (lo + 1 < hi) {
         let md = (lo + hi) >> 1
         if (a.at(md) < x)
