@@ -6,7 +6,6 @@ Math.gcd = (...a) => {
             let z = x % y
             x = y, y = z
         }
-
         return x
     }
 
