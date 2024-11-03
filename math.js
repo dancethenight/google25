@@ -13,6 +13,10 @@ Math.gcd = (...a) => {
     return a.reduce((x, y) => _gcd(x, y))
 }
 
+Math.lcm = (...a) => {
+    return a.reduce((x, y) => x / Math.gcd(x, y) * y)
+}
+
 Math.arrayLowerBound = (a, x) => {
     let lo = 0, hi = a.length - 1
     while (lo + 1 < hi) {
