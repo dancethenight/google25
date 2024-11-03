@@ -2,8 +2,12 @@ Math.swap = (a, i, j) => [a[i], a[j]] = [a[j], a[i]]
 
 Math.gcd = (...a) => {
     let _gcd = (x, y) => {
-        if (y === 0) return x
-        return _gcd(y, x % y)
+        while (y !== 0) {
+            let z = x % y
+            x = y, y = z
+        }
+
+        return x
     }
 
     return a.reduce((x, y) => _gcd(x, y))
